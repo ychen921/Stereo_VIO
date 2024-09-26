@@ -71,19 +71,20 @@ if __name__ == '__main__':
     import argparse
 
     from dataset import EuRoCDataset, DataPublisher
-    from viewer import Viewer
+    # from viewer import Viewer
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--path', type=str, default='/home/ychen921/Stereo_VIO/MH_01_easy', 
+    parser.add_argument('--path', type=str, default='/home/ychen921/Downloads/MH_01_easy', 
         help='Path of EuRoC MAV dataset.')
     parser.add_argument('--view', action='store_true', help='Show trajectory.')
     args = parser.parse_args()
 
-    if args.view:
-        viewer = Viewer()
-    else:
-        viewer = None
-
+    # if args.view:
+    #     viewer = Viewer()
+    # else:
+    #     viewer = None
+    
+    viewer = None
     dataset = EuRoCDataset(args.path)
     dataset.set_starttime(offset=40.)   # start from static state
 
